@@ -8,18 +8,19 @@ const CatModel = require('./cats');
 const setUpDatabase = () => {
     // declare a variable called connection
     // assign connection as a new instance of Sequelize()
-    const connection = new Sequelize("have_i_fed_the_cat_app", "root", "password", {
-    host: "localhost",
-    port: 3307,
-    dialect: "mysql"
+    const connection = new Sequelize("have_i_fed_the_cat_app", "root", "supersecret", {
+        host: "localhost",
+        port: 3307,
+        dialect: "mysql"
     })
 
     const Cat = CatModel(connection, Sequelize)
 
     connection.sync({ alter: true });
 
-    return { Cat };
+    return {
+        Cat
+    };
 }
-
 // Invoke setUpDatabase() function and export its return value
 module.exports = setUpDatabase();

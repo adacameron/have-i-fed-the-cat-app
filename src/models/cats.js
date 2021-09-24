@@ -1,7 +1,10 @@
+const Sequelize = require('sequelize');
+
 // export an arrow function
 // create a model for a cat table
 
 module.exports = (sequelize, DataTypes) => {
+
     // define schema
     const schema = {
         name: DataTypes.STRING,
@@ -12,3 +15,5 @@ module.exports = (sequelize, DataTypes) => {
 
     return sequelize.define('Cat', schema);
 };
+
+
