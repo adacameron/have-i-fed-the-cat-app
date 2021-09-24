@@ -8,4 +8,11 @@ app.use(express.json());
 
 // we will put our routes and controller functions here
 
+app.post('/cats', (req, res) => {
+    res.status(201).json(req.body);
+
+
+});
+
+
 module.exports = app;
